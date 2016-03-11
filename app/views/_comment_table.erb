@@ -1,0 +1,8 @@
+<table class="comment-table">
+  <% @question_answer.comments.each do |comment| %>
+    <tr class="comment-row">
+      <div class="comment-content"><%= comment.content %></div>
+      <div class="comment-user"><%= comment.user %> <span class="comment-time"><%= comment.updated_at %></span></div>
+    </tr>
+  <% end %>
+</table>
