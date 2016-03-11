@@ -60,6 +60,9 @@
  box-shadow: 2px 3px 5px #bfbfbf;
 }
 
+.hands {
+ /* width: 15px;  height: 15px;  color: #000;*/
+}
 
 .button p {
  font-size: 50px;
@@ -83,4 +86,14 @@ a {
 
 .button p:hover {
  text-shadow: 0px 0px 4px #fff;
+}
+
+.vote-score {
+  font-size: 2em;
+  text-align: center;
+  margin-right: 20px;
+}
+
+#question-answer-form {
+  display: none;
 }

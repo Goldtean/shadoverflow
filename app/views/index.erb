@@ -1,6 +1,11 @@
-<a href=''>Ask a question</a>
+<a id="question-answer-link" href=''>Ask a question</a>
 
+
+<%= erb :_question_answer_form, layout: false  %>
+
+<table class="question-table">
 <% @questions.each do |question| %>
 
   <%= erb :_question_box, layout: false, locals: {question: question} %>
 <% end %>
+</table>

@@ -1,5 +1,4 @@
 
-#Route to upvote
 
 post '/questions/:id/upvotes' do
 	if session[:id]
