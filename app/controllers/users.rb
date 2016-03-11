@@ -4,9 +4,9 @@ get '/users' do
 end
 
 
-#User registration form 
+#User registration form
 get '/users/new' do
-  erb :'users/new'
+    erb :'users/new'
 end
 
 #Create new user route
@@ -15,7 +15,7 @@ post '/users' do
   if @user.valid?
     session[:user_id] = @user.id
     session[:name] = @user.full_name
-    redirect '/users'
+    redirect '/questions'
   else
     redirect "/users/new?errors=#{@user.errors.full_messages.join(" and ")}"
   end
@@ -24,8 +24,12 @@ end
 
 #View a specific user
 get '/users/:id' do
-  @user = User.find(params[:id])
-  erb :'/users/show'
+  if session[:user_id]
+    @user = User.find(params[:id])
+    erb :'/users/show'
+  else
+    redirect '/'
+  end
 end
 
 
@@ -47,6 +51,9 @@ end
 #User login route
 post '/users/login' do
   user = User.find_by(email: params[:email])
+  if user == nil
+    redirect '/'
+  end
   if user.authenticate(params[:password])
     session[:user_id] = user.id
     session[:name] = user.full_name

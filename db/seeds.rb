@@ -9,9 +9,3 @@ end
   new_question = Question.create(content: Faker::Internet.email)
   User.last.questions << new_question
 end
-
-=begin
-10.times do
-  new_vote = Vote.create()
-end
-=end

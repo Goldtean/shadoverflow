@@ -1,13 +1,16 @@
-<h1 class="question-title"></h1>
-<table class="question-table">
   <tr>
     <td class="upvote-downvote">
-      <button class="upvote"></button>
-      <div class="vote-score"></div>
-      <button class="downvote"></button>
+        <button class="button green">
+          <p class="hands">&#x261D;</p>
+        </button>
+      <div class="vote-score"><% vote_score = (question.votes.where(up_or_down: true).count - question.votes.where(up_or_down: false).count) %><%= vote_score %></div>
+      <button class="button red">
+          <p class="hands">&#x261F;</p>
+      </button>
     </td>
     <td class="question-content-column">
-      <div class="question-content"></div>
+      <div class="question-content"><a href="<%="/questions/#{question.id}"%>"><%=question.content%></a></div>
     </td>
   </tr>
-</table>
+
+
