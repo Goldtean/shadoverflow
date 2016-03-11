@@ -11,7 +11,6 @@ end
 
 #Create new answer route
 post '/questions/:id/answers' do
-	@
 	if session[:id]
 		@answer = Answer.create(content: params[:content])
 	else
