@@ -1,10 +1,10 @@
-<table class="question-table">
+<table class="question-table" id='<%="#{question.id}"%>'>
   <tr>
     <td class="upvote-downvote">
         <button class="button green">
           <p>&#x261D;</p>
         </button>
-      <div class="vote-score"><% vote_score = (question.votes.where(up_or_down: true).count - question.votes.where(up_or_down: false).count) %><%= vote_score %></div>
+      <div class='vote-score-<%="#{question.id}"%>'><% vote_score = (question.votes.where(up_or_down: true).count - question.votes.where(up_or_down: false).count) %><%= vote_score %></div>
       <button class="button red">
           <p>&#x261F;</p>
       </button>
