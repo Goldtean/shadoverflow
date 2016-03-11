@@ -1,0 +1,11 @@
+<h1><%= @question.content %></h1>
+	<h2><%= @question.votes.length %></h2>
+
+	<% @question.comments.each do |comment| %>
+	<p><%=comment.content%></p>
+	<% end %>
+
+<h3>Answers</h3>
+<% @question.answers.each do |answer| %>
+	<p><%= answer.content %></p>
+<% end %>
