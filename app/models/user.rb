@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :questions
   has_many :answers
-  has_many :comments, :as => :commentable
+  has_many :comments
   has_many :votes
 
   validates :first_name, :last_name, :user_name, :email, :password_hash, presence: true
