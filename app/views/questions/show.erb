@@ -1,0 +1,13 @@
+<h1><%= @question.content %></h1>
+	<h2><%= @question.votes.length %></h2>
+
+<div><%= erb :_comment_table, locals: {@question = question}, layout: false %></div>
+<div><%= erb :_question_box %></div>
+
+<h3>Answers</h3>
+<% @question.answers.each do |answer| %>
+	<p><%= answer.content %></p>
+	<p><%= answer.comments %></p>
+<% end %>
+
+<div><%= erb :_question_answer_form, layout: false%></div>
