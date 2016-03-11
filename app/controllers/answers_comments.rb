@@ -1,7 +1,8 @@
 ###### COMMENTS ON ANSWERS ########
 
+#view all comments for and answer
 get '/answers/:id/comments' do
-	
+	@answer.comments
 end
 
 #Form to comment on a question
