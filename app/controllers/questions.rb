@@ -1,6 +1,7 @@
 #Browse all questions / Trending questions
 get '/questions' do
 	@questions = Question.all
+	erb :index
 end
 
 #Form to create new question

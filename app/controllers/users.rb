@@ -4,7 +4,7 @@ get '/users' do
 end
 
 
-#User registration form 
+#User registration form
 get '/users/new' do
   erb :'users/new'
 end
@@ -15,7 +15,7 @@ post '/users' do
   if @user.valid?
     session[:user_id] = @user.id
     session[:name] = @user.full_name
-    redirect '/users'
+    redirect '/questions'
   else
     redirect "/users/new?errors=#{@user.errors.full_messages.join(" and ")}"
   end
